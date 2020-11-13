@@ -1,5 +1,19 @@
-.mainPage__infoBox{
+.MainPage__main{
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
+}
+.MainPage__dashboard{
+    flex: 0.7;
+    margin-right: 2rem;
+}
+.MainPage__sidebar{
+    margin-top: 40px;
+    margin-right: 4rem;
+    flex: 0.3;
+
+}
+@media(max-width:900px){
+    .MainPage__main{
+        flex-direction: column;
+    }
 }
