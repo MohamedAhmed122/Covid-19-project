@@ -1,9 +1,10 @@
 import React from 'react'
+import Header from '../../Components/Header/Header'
 
 export default function MainPage() {
     return (
         <div>
-            <h1>Hello From the Main Page</h1>
+            <Header />
         </div>
     )
 }
