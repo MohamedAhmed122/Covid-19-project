@@ -20,6 +20,7 @@ export default function InfoBox({title, cases, SubTitle, total}) {
                 </Typography>
                 <Typography className='infoBox__subTitle' color='textSecondary'>
                    today {SubTitle}  {total }
+                 
                 </Typography>
             </CardContent>
         </Card>

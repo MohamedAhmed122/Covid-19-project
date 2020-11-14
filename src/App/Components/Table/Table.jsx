@@ -6,11 +6,14 @@ export default function Table() {
     const [tables,setTables] =useState([])
 
     useEffect(()=>{
-        fetch('https://disease.sh/v3/covid-19/countries')
-        .then(response => response.json())
-        .then(data =>{
-            setTables(sortData(data))
-        })
+        const fetchData = async () =>{
+            await fetch('https://disease.sh/v3/covid-19/countries')
+            .then(response => response.json())
+            .then(data =>{
+                setTables(sortData(data))
+            })
+        }
+        fetchData();
     },[])
     return (
         <div>
