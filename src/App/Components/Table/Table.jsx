@@ -13,7 +13,7 @@ export default function Table() {
         })
     },[])
     return (
-        <Card>
+        <div>
             <h3 style={{textAlign: 'center', marginTop:10}}>Live Cases by country</h3>
             <div className='table'> 
                 {
@@ -25,6 +25,6 @@ export default function Table() {
                     ))
                 }
             </div>
-        </Card>
+        </div>
     )
 }

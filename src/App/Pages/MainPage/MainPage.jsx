@@ -1,5 +1,5 @@
 import React from 'react'
-import Table from '../../Components/Table/Table'
+import Sidebar from '../../Components/Sidebar/Sidebar'
 import Dashboard from '../Dashboard/Dashboard'
 
 import './StyleMainPage.css'
@@ -11,7 +11,7 @@ export default function MainPage() {
                 <Dashboard />
             </div>
             <div className='MainPage__sidebar'>
-                <Table />
+                <Sidebar />
             </div>
             
         </div>
