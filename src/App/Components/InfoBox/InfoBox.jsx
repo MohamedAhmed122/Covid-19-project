@@ -19,7 +19,7 @@ export default function InfoBox({title, cases, SubTitle, total}) {
                    total:  {cases} 
                 </Typography>
                 <Typography className='infoBox__subTitle' color='textSecondary'>
-                   today {SubTitle}  {total }
+                   today {SubTitle}  {total===0? 'None 😅': total }
                  
                 </Typography>
             </CardContent>
