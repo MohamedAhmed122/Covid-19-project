@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, CardContent, Typography } from '@material-ui/core'
 import './StyleInfoBox.css'
+import { prettyPrintStat } from '../../utils/utils'
 
 
 
@@ -15,11 +16,11 @@ export default function InfoBox({title, cases, SubTitle, total}) {
                 <h2 className='infoBox__subTitle' >
                     {title} 
                 </h2>
-                <Typography className='infoBox__title'> 
-                   total:  {cases} 
-                </Typography>
+                <h1 className='infoBox__title'> 
+                 {prettyPrintStat(cases)} 
+                </h1>
                 <Typography className='infoBox__subTitle' color='textSecondary'>
-                   today {SubTitle}  {total===0? 'None 😅': total }
+                   today {SubTitle}  {total===0? 'None 😅': prettyPrintStat(total) }
                  
                 </Typography>
             </CardContent>

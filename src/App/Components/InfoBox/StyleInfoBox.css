@@ -1,4 +1,13 @@
 .infoBox__main{
-    margin-top: 20px;
+
+    flex: 1;
+    margin: 10px 10px;
+    min-width: 300px;
     
+}
+.infoBox__title{
+    color: #cc1034;
+    font-size: 1.7rem !important;
+    font-weight: bold;
+    margin-bottom: 0.5rem;   
 }

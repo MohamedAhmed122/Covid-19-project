@@ -22,23 +22,24 @@ export default function Dashboard() {
         fetchData();
     },[])
     
-  
-    useEffect(()=>{
-       const fetchCountriesData = async ()=>{
-           await fetch('https://disease.sh/v3/covid-19/countries')
-           .then(response => response.json())
-            .then(data =>{
-                const counties = data.map(country=>({
-                    name: country.country,
-                    value: country.countryInfo.iso3,
-                    id: country.countryInfo._id
-                }))
-                setCountries(counties)
-                setCountryMap(data)
-            })
-       }
-       fetchCountriesData()
-    },[])
+    useEffect(() => {
+        const getCountriesData = async () => {
+          fetch("https://disease.sh/v3/covid-19/countries")
+            .then((response) => response.json())
+            .then((data) => {
+              const countries = data.map((country) => ({
+                name: country.country,
+                value: country.countryInfo.iso2,
+              }));
+              
+              setCountries(countries);
+              setCountryMap(data)
+         
+            });
+        };
+    
+        getCountriesData();
+      }, []);
 
     const handleChange = async e=>{
         const countryCode =e.target.value
@@ -48,14 +49,15 @@ export default function Dashboard() {
         'https://disease.sh/v3/covid-19/all' : 
         `https://disease.sh/v3/covid-19/countries/${countryCode}`
 
-        await fetch(url).then(response => response.json())
-        .then(data => {
-            setSelectedCountry(countryCode)
-            setCountryInfo(data)
-        })
+        await fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+          setSelectedCountry(countryCode);
+          setCountryInfo(data);
+    
+        });
     }
 
-console.log('I am the coutry  info',countryInfo);
     return (
         <div>
             <Header countries={countries} selectedCountry={selectedCountry} handleChange={handleChange}/>
