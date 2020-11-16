@@ -2,14 +2,14 @@ import React from 'react'
 import { Card } from '@material-ui/core'
 import LineGraph from '../Graph/Graph'
 import Table from '../Table/Table'
-export default function Sidebar() {
+export default function Sidebar({casesType}) {
     return (
         <div>
             <Card>
                 <Table />
             </Card>
             <Card style={{marginTop: 10}}>
-                <LineGraph />
+                <LineGraph casesType={casesType} />
             </Card>
         </div>
     )

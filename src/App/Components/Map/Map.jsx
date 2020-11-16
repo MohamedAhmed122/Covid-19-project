@@ -6,7 +6,7 @@ import './StyleMap.css'
 
 
 
-function Map({zoom, center, country}) {
+function Map({zoom, center,casesType, country}) {
   return (
     <div className="map">
       <MapContainer center={center} zoom={zoom} scrollWheelZoom={false} style={{height: '100%'}}>
@@ -14,7 +14,7 @@ function Map({zoom, center, country}) {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
-       {showDataOnMap(country, 'cases')}
+       {showDataOnMap(country, casesType)}
       </MapContainer>
     </div>
   );

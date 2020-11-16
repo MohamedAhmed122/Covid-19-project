@@ -64,7 +64,7 @@ const buildChartData = (data, casesType) => {
   return chartData;
 };
 
-function LineGraph({ casesType='deaths' }) {
+function LineGraph({ casesType}) {
   const [data, setData] = useState({});
 
   useEffect(() => {

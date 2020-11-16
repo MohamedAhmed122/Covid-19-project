@@ -1,6 +1,6 @@
 import { Card } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
-import { sortData } from '../../utils/utils'
+import { prettyPrintStat, sortData } from '../../utils/utils'
 import './StyleTable.css'
 export default function Table() {
     const [tables,setTables] =useState([])
@@ -23,7 +23,7 @@ export default function Table() {
                     tables.map(table=>(
                         <tr key={table.countryInfo._id}>
                             <td>{table.country}</td>
-                            <td>{table.cases}</td>
+                            <td>{prettyPrintStat(table.cases)}</td>
                         </tr>
                     ))
                 }

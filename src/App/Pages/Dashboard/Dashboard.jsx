@@ -3,11 +3,11 @@ import Header from '../../Components/Header/Header'
 import InfoBox from '../../Components/InfoBox/InfoBox'
 import Map from '../../Components/Map/Map'
 import './styleDashboard.css'
-export default function Dashboard() {
+export default function Dashboard({setCasesType,casesType }) {
     const [selectedCountry, setSelectedCountry] = useState('worldWide')
     const [countryInfo, setCountryInfo] = useState({})
-    const [zoomMap, setZoomMap] =useState(3)
-    const [center, setCenterMap] = useState({ lat: 34.80746, lng: -40.4796 });
+    const [zoomMap, ] =useState(3)
+    const [center, ] = useState({ lat: 34.80746, lng: -40.4796 });
     const [countries,setCountries] = useState([])
     const [countryMap, setCountryMap]= useState([])
 
@@ -62,23 +62,34 @@ export default function Dashboard() {
         <div>
             <Header countries={countries} selectedCountry={selectedCountry} handleChange={handleChange}/>
             <div className='dashboard__infoBox'>
-                <InfoBox 
-                SubTitle='cases' 
-                title='Corovirse Case' 
+                <InfoBox
+                onClick={(e) => setCasesType("cases")}
+                title="Coronavirus Cases"
+                isRed
+                active={casesType === "cases"}
                 total={countryInfo.todayCases} 
-                cases={countryInfo.cases}/>
-                <InfoBox 
-                title='recovered '
+                SubTitle='cases' 
+                cases={countryInfo.cases}
+              />
+              <InfoBox
+                onClick={(e) => setCasesType("recovered")}
+                title="Recovered"
+                active={casesType === "recovered"}
                 SubTitle='recovered' 
                 total={countryInfo.todayRecovered} 
-                cases={countryInfo.recovered}/>
-                <InfoBox 
-                title='Deaths' 
+                cases={countryInfo.recovered}
+              />
+              <InfoBox
+                onClick={(e) => setCasesType("deaths")}
+                title="Deaths"
+                isRed
+                active={casesType === "deaths"}
                 SubTitle='Deaths' 
                 total={countryInfo.todayDeaths} 
-                cases={countryInfo.deaths}/>
+                cases={countryInfo.deaths}
+              />
             </div>
-            <Map country={countryMap} center={center} zoom={zoomMap}/>
+            <Map casesType={casesType} country={countryMap} center={center} zoom={zoomMap}/>
         </div>
     )
 }
