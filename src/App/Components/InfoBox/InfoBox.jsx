@@ -26,7 +26,7 @@ export default function InfoBox({title,active, isRed ,cases, SubTitle, total, ..
           </h2>
   
           <Typography className="infoBox__total" color="textSecondary">
-            today {SubTitle} {total ===0? 'None 😅' : prettyPrintStat(total)} 
+            today {SubTitle} {total ===0? 'unavailable 😅' : prettyPrintStat(total)} 
           </Typography>
         </CardContent>
       </Card>

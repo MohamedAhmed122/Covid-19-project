@@ -1,8 +1,11 @@
 .info-flag{
     height: 100px;
-    width:140px;
-    background-size: cover;
+    width:150px;
+    object-fit: contain;
     border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .info-name{
     margin: 9px 0;

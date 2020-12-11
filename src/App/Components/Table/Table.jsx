@@ -1,4 +1,3 @@
-import { Card } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import { prettyPrintStat, sortData } from '../../utils/utils'
 import './StyleTable.css'

@@ -34,7 +34,7 @@ export default function Dashboard({setCasesType,casesType }) {
               
               setCountries(countries);
               setCountryMap(data)
-         
+          
             });
         };
     
